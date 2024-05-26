@@ -15086,6 +15086,7 @@ MonoBehaviour:
   - {fileID: 859367742368633528, guid: fbc4eefc41f117f4c9d3ea0beae52f40, type: 3}
   - {fileID: 4419079825789491289, guid: c18deb9966968934193be9ab068c3af5, type: 3}
   - {fileID: 1115435002774086459, guid: 27f38c7ed99497a4a8c1ed27636919e7, type: 3}
+  currentBall: {fileID: 59543844}
 --- !u!1 &1499799315
 GameObject:
   m_ObjectHideFlags: 0

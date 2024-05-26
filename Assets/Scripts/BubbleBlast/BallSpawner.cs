@@ -6,12 +6,16 @@ using UnityEngine;
 public class BallSpawner : MonoBehaviour
 {
     [SerializeField] private BallController[] balls;
+    [SerializeField] private BallController currentBall;
 
-    void OnEnable()
+
+    private void Update()
     {
-        BallController.BallDestroy += SpawnNewBall;
+        if(currentBall == null)
+        {
+            Spawn();
+        }
     }
-
     void SpawnNewBall()
     {
         Invoke("Spawn", 0.5f) ;// костыль для бага с молнией - новый шарик спаунился не в том месте
@@ -19,11 +23,8 @@ public class BallSpawner : MonoBehaviour
     void Spawn()
     {
         System.Random random = new System.Random();
-        Instantiate(balls[random.Next(0, balls.Length)], transform.position, transform.rotation);
+        BallController newBall = Instantiate(balls[random.Next(0, balls.Length)], transform.position, transform.rotation);
+        currentBall = newBall;
     }
 
-    void OnDisable()
-    {
-        BallController.BallDestroy -= SpawnNewBall;
-    }
 }

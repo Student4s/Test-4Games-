@@ -26,4 +26,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BlastBubbles-Level3.unity
     guid: f620f32a7edd8ca48a0603bf464a604a
+  - enabled: 1
+    path: Assets/Scenes/Pocket Puzzler-Level-1.unity
+    guid: 2b648333fbf9c6a4aba7ce73a9b2f774
+  - enabled: 1
+    path: Assets/Scenes/Pocket Puzzler-Level-2.unity
+    guid: f329fd30ba306c94ba9b397ffe9946b8
+  - enabled: 1
+    path: Assets/Scenes/Pocket Puzzler-Level-3.unity
+    guid: 02193962c29ff244e833ed57dd2cc831
+  - enabled: 1
+    path: Assets/Scenes/Word-Quest-Level-1.unity
+    guid: 9a1b86a2e09bea240b5600ce565de60f
+  - enabled: 1
+    path: Assets/Scenes/Word-Quest-Level-2.unity
+    guid: 5ad91f9f20353024e8ea1ce4c20bf92c
+  - enabled: 1
+    path: Assets/Scenes/Word-Quest-Level-3.unity
+    guid: da8b7047135ebb448b0132393d68c5f3
   m_configObjects: {}

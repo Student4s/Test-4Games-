@@ -37,6 +37,7 @@ public class BlastBubblesMainScipt : MonoBehaviour
         BallsInField.BallDestroy -= ChangeScore;
     }
 
+
     private void Update()//нужный костыль, увы
     {
         if (CheckList())
