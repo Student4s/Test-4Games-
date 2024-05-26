@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridItem : MonoBehaviour
@@ -12,8 +13,11 @@ public class GridItem : MonoBehaviour
     public List <GridItem> connectedItem;
     public bool isSelected= false;
 
+    public delegate void AddToScript(GridItem A);
+    public static event AddToScript Add;
     void Start()
     {
+        Add(this);
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColor = spriteRenderer.color;
     }

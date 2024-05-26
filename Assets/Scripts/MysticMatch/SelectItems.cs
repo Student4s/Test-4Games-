@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectItems : MonoBehaviour
 {
-    [SerializeField] private List <GridItem> selectedItems;
+    [SerializeField] private List<GridItem> selectedItems;
     [SerializeField] private List<GridItem> allItems;
     [SerializeField] private LayerMask selectableLayer;
 
@@ -16,15 +16,17 @@ public class SelectItems : MonoBehaviour
 
     private void OnEnable()
     {
+        GridItem.Add += AddToList;
         MysticMatchMainScript.Hammer += UseHammer;
     }
     private void OnDisable()
     {
+        GridItem.Add -= AddToList;
         MysticMatchMainScript.Hammer -= UseHammer;
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)&& !isHammer)
+        if (Input.GetMouseButtonDown(0) && !isHammer)
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, selectableLayer);
@@ -34,7 +36,7 @@ public class SelectItems : MonoBehaviour
                 GridItem selectItems = hit.collider.GetComponent<ItemCore>().item;
                 if (selectItems != null)
                 {
-                    if(isSelected(selectItems))
+                    if (isSelected(selectItems))
                     {
                         selectItems.Select();// подкрашиваем выбранный предмет
                         selectedItems.Add(selectItems);
@@ -69,7 +71,7 @@ public class SelectItems : MonoBehaviour
             {
                 hammer.itemName = hit.collider.GetComponent<ItemCore>().item.ItemName;
                 Instantiate(hammer, hit.collider.gameObject.transform.position, hit.collider.gameObject.transform.rotation);
-               
+
                 foreach (GridItem item in allItems)
                 {
                     item.Deselect();
@@ -84,19 +86,25 @@ public class SelectItems : MonoBehaviour
     {
         bool answer = true;
 
-        foreach(GridItem item2 in selectedItems)
+        foreach (GridItem item2 in selectedItems)
         {
-            if (!item2.connectedItem.Contains(item) || item.ItemName!=item2.ItemName || selectedItems.Contains(item))
+            if (!item2.connectedItem.Contains(item) || item.ItemName != item2.ItemName || selectedItems.Contains(item))
             {
                 return false;
-            }  
+            }
         }
-      return answer;
+        return answer;
     }
 
     public void UseHammer()
     {
-        isHammer = true ;
+        isHammer = true;
     }
+
+    public void AddToList(GridItem item)
+    {
+        allItems.Add(item);
+    }
+
 
 }
