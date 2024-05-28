@@ -1635,21 +1635,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842908513}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: Additem
-        m_Mode: 3
+      - m_Target: {fileID: 893119907}
+        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
+        m_MethodName: AddLightning
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 893119907}
-        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
-        m_MethodName: AddLightning
+      - m_Target: {fileID: 1842908513}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: UpdateCounts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2997,10 +2997,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842908513}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: Additem
-        m_Mode: 3
+      - m_Target: {fileID: 893119907}
+        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
+        m_MethodName: AddBomb
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3009,9 +3009,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 893119907}
-        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
-        m_MethodName: AddBomb
+      - m_Target: {fileID: 1842908513}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: UpdateCounts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3509,6 +3509,7 @@ MonoBehaviour:
   Bombs: 5
   Hammers: 5
   Lightnings: 5
+  Dice: 0
 --- !u!1 &918219528
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,21 +4350,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842908513}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: Additem
-        m_Mode: 3
+      - m_Target: {fileID: 893119907}
+        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
+        m_MethodName: Addhammer
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 893119907}
-        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
-        m_MethodName: Addhammer
+      - m_Target: {fileID: 1842908513}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: UpdateCounts
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5098,14 +5099,26 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842908513}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: Additem
-        m_Mode: 3
+      - m_Target: {fileID: 893119907}
+        m_TargetAssemblyTypeName: ItemHolder, Assembly-CSharp
+        m_MethodName: AddDice
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1842908513}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: UpdateCounts
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

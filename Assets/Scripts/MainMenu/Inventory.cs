@@ -15,15 +15,11 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         items = FindObjectOfType<ItemHolder>();
-        countItem[0] = items.Bombs;
-        countItem[1] = items.Lightnings;
-        countItem[2] = items.Hammers;
-        countItem[3] = items.Dice;
         UpdateCounts();
         
     }
 
-    void UpdateCounts()
+    public void UpdateCounts()
     {
         countItem[0] = items.Bombs;
         countItem[1] = items.Lightnings;
@@ -36,30 +32,4 @@ public class Inventory : MonoBehaviour
         countOfItem4.text = countItem[3].ToString();
     }
 
-    public void Additem(int itemNumber)
-    {
-        if(itemNumber==0)
-        {
-            items.AddBomb();
-        } else {
-            if (itemNumber == 1)
-            {
-                items.AddLightning();
-            }
-            else
-            {
-                if (itemNumber == 2)
-                {
-                    items.Addhammer();
-                }
-                else {
-                    if (itemNumber == 3)
-                    {
-                        items.AddDice();
-                    }
-                }
-            }
-        }
-        UpdateCounts();
-    }
 }
