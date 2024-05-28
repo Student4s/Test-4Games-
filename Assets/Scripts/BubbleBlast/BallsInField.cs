@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallsInField : MonoBehaviour
@@ -11,6 +12,18 @@ public class BallsInField : MonoBehaviour
 
     public delegate void BallDestroyed();
     public static event BallDestroyed BallDestroy;
+
+    public delegate void AddToList(GameObject ball);
+    public static event AddToList AddThis;
+
+    private void Start()
+    { 
+        if(colorName!= "rock")
+        {
+            AddThis(gameObject);
+        }
+        
+    }
     public void Pop()
     {
         isPop = true;

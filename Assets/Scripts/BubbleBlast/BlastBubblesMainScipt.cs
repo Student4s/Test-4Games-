@@ -30,11 +30,14 @@ public class BlastBubblesMainScipt : MonoBehaviour
     {
         BallController.BallDestroy += ChangeCountOfUse;
         BallsInField.BallDestroy += ChangeScore;
+        BallsInField.AddThis += AddBallToList; ;
+
     }
     void OnDisable()
     {
         BallController.BallDestroy -= ChangeCountOfUse;
         BallsInField.BallDestroy -= ChangeScore;
+        BallsInField.AddThis -= AddBallToList; ;
     }
 
 
@@ -118,5 +121,10 @@ public class BlastBubblesMainScipt : MonoBehaviour
         {
             return true;
         }
+    }
+
+    void AddBallToList(GameObject ball)
+    {
+        allBallsInField.Add(ball);
     }
 }
