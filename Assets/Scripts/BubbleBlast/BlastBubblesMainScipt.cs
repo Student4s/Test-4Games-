@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class BlastBubblesMainScipt : MonoBehaviour
 {
+    [SerializeField] private ItemHolder items;
+
     [SerializeField] private int ballUse;// в теории может понадобится, но пока не придумал как
     [SerializeField] private int scores;
     [SerializeField] private int maxScores;
@@ -49,12 +52,23 @@ public class BlastBubblesMainScipt : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UpdateCounts();
+        items = FindObjectOfType<ItemHolder>();
+        countOfBombs = items.Bombs;
+        countOfLightnings = items.Lightnings;
+        UpdateCounts();
+
+    }
+
     public void UploadBomb()
     {
         if (countOfBombs >= 1)
         {
             Bomb();
             countOfBombs -= 1;
+            items.Bombs -= 1;
             UpdateCounts();
         }
     }
@@ -65,12 +79,9 @@ public class BlastBubblesMainScipt : MonoBehaviour
         {
             Lightning();
             countOfLightnings -= 1;
+            items.Lightnings -= 1;
             UpdateCounts();
         }
-    }
-    private void Start()
-    {
-        UpdateCounts();
     }
 
     public void ChangeCountOfUse()

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    [SerializeField] private ItemHolder items;
     [SerializeField] private int[] countItem = new int[4];
 
     [SerializeField] private Text countOfItem1;
@@ -13,7 +14,12 @@ public class Inventory : MonoBehaviour
     [SerializeField] private Text countOfItem4;
     void Start()
     {
+        items = FindObjectOfType<ItemHolder>();
+        countItem[0] = items.Bombs;
+        countItem[1] = items.Lightnings;
+        countItem[2] = items.Hammers;
         UpdateCounts();
+        
     }
 
     void UpdateCounts()
@@ -26,7 +32,19 @@ public class Inventory : MonoBehaviour
 
     public void Additem(int itemNumber)
     {
-        countItem[itemNumber] += 1;
+        if(itemNumber==0)
+        {
+            items.Bombs += 1;
+        }
+        if (itemNumber == 1)
+        {
+            items.Lightnings += 1;
+        }
+        if (itemNumber == 2)
+        {
+            items.Hammers += 1;
+        }
+
         UpdateCounts();
     }
 }

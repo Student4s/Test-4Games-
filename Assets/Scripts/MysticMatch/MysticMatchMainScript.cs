@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class MysticMatchMainScript : MonoBehaviour
 {
+    [SerializeField] private ItemHolder items;
+
     [SerializeField] private int scores;
     [SerializeField] private int maxScores;
     [SerializeField] private int countOfHammers;
@@ -32,6 +35,9 @@ public class MysticMatchMainScript : MonoBehaviour
     private void Start()
     {
         UpdateCounts();
+        items = FindObjectOfType<ItemHolder>();
+        countOfHammers = items.Hammers;
+        UpdateCounts();
     }
     public void UploadHammer()
     {
@@ -39,6 +45,7 @@ public class MysticMatchMainScript : MonoBehaviour
         {
             Hammer();
             countOfHammers -= 1;
+            items.Hammers -= 1;
             UpdateCounts();
         }
     }
