@@ -18,12 +18,18 @@ public class Inventory : MonoBehaviour
         countItem[0] = items.Bombs;
         countItem[1] = items.Lightnings;
         countItem[2] = items.Hammers;
+        countItem[3] = items.Dice;
         UpdateCounts();
         
     }
 
     void UpdateCounts()
     {
+        countItem[0] = items.Bombs;
+        countItem[1] = items.Lightnings;
+        countItem[2] = items.Hammers;
+        countItem[3] = items.Dice;
+
         countOfItem1.text = countItem[0].ToString();
         countOfItem2.text = countItem[1].ToString();
         countOfItem3.text = countItem[2].ToString();
@@ -34,17 +40,26 @@ public class Inventory : MonoBehaviour
     {
         if(itemNumber==0)
         {
-            items.Bombs += 1;
+            items.AddBomb();
+        } else {
+            if (itemNumber == 1)
+            {
+                items.AddLightning();
+            }
+            else
+            {
+                if (itemNumber == 2)
+                {
+                    items.Addhammer();
+                }
+                else {
+                    if (itemNumber == 3)
+                    {
+                        items.AddDice();
+                    }
+                }
+            }
         }
-        if (itemNumber == 1)
-        {
-            items.Lightnings += 1;
-        }
-        if (itemNumber == 2)
-        {
-            items.Hammers += 1;
-        }
-
         UpdateCounts();
     }
 }

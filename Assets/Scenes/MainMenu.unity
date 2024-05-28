@@ -1423,7 +1423,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY
+  m_Text: GET
 --- !u!222 &482959563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3907,7 +3907,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY
+  m_Text: GET
 --- !u!222 &972701688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5552,7 +5552,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY
+  m_Text: GET
 --- !u!222 &1525230795
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6551,7 +6551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BUY
+  m_Text: GET
 --- !u!222 &1919282333
 CanvasRenderer:
   m_ObjectHideFlags: 0

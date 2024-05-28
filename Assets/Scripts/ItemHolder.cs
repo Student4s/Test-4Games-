@@ -7,6 +7,7 @@ public class ItemHolder : MonoBehaviour// чтобы нормально считало количество ите
     public int Bombs;
     public int Hammers;
     public int Lightnings;
+    public int Dice;
 
     private static ItemHolder instance;
 
@@ -33,5 +34,9 @@ public class ItemHolder : MonoBehaviour// чтобы нормально считало количество ите
     public void AddLightning()
     {
         Lightnings += 1;
+    }
+    public void AddDice()
+    {
+        Dice += 1;
     }
 }
