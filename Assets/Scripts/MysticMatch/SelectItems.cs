@@ -28,11 +28,13 @@ public class SelectItems : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !isHammer)
         {
+            DeleteNullItem();
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, selectableLayer);
 
             if (hit.collider.GetComponent<ItemCore>() != null)
             {
+                
                 GridItem selectItems = hit.collider.GetComponent<ItemCore>().item;
                 if (selectItems != null)
                 {
@@ -44,9 +46,10 @@ public class SelectItems : MonoBehaviour
                         {
                             foreach (GridItem item in selectedItems)
                             {
-                                Destroy(item.gameObject);
+                               item.GetComponent<GridItem>().DestroyMyself();
                             }
                             selectedItems.Clear();
+                            DeleteNullItem();
                             Match(1);
                         }
                     }
@@ -57,6 +60,7 @@ public class SelectItems : MonoBehaviour
                             item.Deselect();
                             selectedItems.Clear();
                         }
+                        DeleteNullItem();
                     }
                 }
             }
@@ -104,6 +108,11 @@ public class SelectItems : MonoBehaviour
     public void AddToList(GridItem item)
     {
         allItems.Add(item);
+    }
+
+    void DeleteNullItem()
+    {
+        allItems.RemoveAll(item => item == null);
     }
 
 

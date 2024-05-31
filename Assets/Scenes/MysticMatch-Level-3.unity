@@ -6738,6 +6738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72467014526042848be1359b01325b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: {fileID: 0}
   scores: 0
   maxScores: 12
   countOfHammers: 2
@@ -11407,7 +11408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.12000007, y: 0}
+  m_AnchoredPosition: {x: -0.21, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1892254996

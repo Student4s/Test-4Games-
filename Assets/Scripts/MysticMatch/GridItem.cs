@@ -10,6 +10,8 @@ public class GridItem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     [SerializeField] private Color selectedColor;
+    [SerializeField] private GameObject selectedBackground;
+    [SerializeField] private ParticleScript particles;
     public List <GridItem> connectedItem;
     public bool isSelected= false;
 
@@ -25,12 +27,14 @@ public class GridItem : MonoBehaviour
     public void Select()
     {
         spriteRenderer.color = selectedColor;
+        selectedBackground.SetActive(true);
         isSelected = true;
     }
 
     public void Deselect()
     {
         spriteRenderer.color = originalColor;
+        selectedBackground.SetActive(false);
         isSelected = false;
     }
 
@@ -47,6 +51,7 @@ public class GridItem : MonoBehaviour
 
     public void DestroyMyself()
     {
+        Instantiate(particles, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

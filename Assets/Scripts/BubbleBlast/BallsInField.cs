@@ -13,6 +13,9 @@ public class BallsInField : MonoBehaviour
     public delegate void BallDestroyed();
     public static event BallDestroyed BallDestroy;
 
+    public delegate void BallDestroyedParticle(Transform pos);
+    public static event BallDestroyedParticle DestroyForParicle;
+
     public delegate void AddToList(GameObject ball);
     public static event AddToList AddThis;
 
@@ -38,6 +41,7 @@ public class BallsInField : MonoBehaviour
             }
         }
         BallDestroy();
+        DestroyForParicle(transform);
         Destroy(gameObject,0.02f);
     }
 
